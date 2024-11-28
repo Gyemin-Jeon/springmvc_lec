@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import lombok.Getter;
 
-@Component  // 이 Person 클래스는 이름이 person 인 bean 으로 만들어집니다.
+@Component (value = "p") // 이 Person 클래스는 이름이 p 인 bean 으로 만들어집니다.
 
 @Getter
 public class Person {
