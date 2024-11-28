@@ -7,6 +7,10 @@
     Contact contact = new Contact();
     contact.setMobile("010-1111-1111");
     contact.setEmail("user@jeon.com");
+    
+    Person person = new Person();
+    Person.setName("유저");
+    Person.setContact(contact);
   -->
   <!--
     id    : Spring Container 에 저장할 bean 의 이름
@@ -18,11 +22,56 @@
   <!--
     property 태그 : setter 를 이용해서 값을 전달하는 태그
   -->
-  <bean id="contact" class="com.jeon.app01.pkg01.Contact" scope="singleton">
+  <bean id="contactBean" class="com.jeon.app01.pkg01.Contact" scope="singleton">
     <property name="mobile">
       <value>010-1111-1111</value>
     </property>
     <property name="email" value="user@jeon.com" />
   </bean>
+  
+  <bean id="PersonBean" class="com.jeon.app01.pkg01.Person" scope="singleton">
+  <property name="name">
+    <value>유저</value>
+  </property>
+  <property name="contact">
+    <ref bean="contactBean" />
+  </property>
+  
+  </bean>
+  
+  <!-- property name="contact" ref="contactBean" -->
 
 </beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
