@@ -9,7 +9,5 @@ public class Contact {
   
   private String mobile;
   private String email;
-
-  
   
 }
