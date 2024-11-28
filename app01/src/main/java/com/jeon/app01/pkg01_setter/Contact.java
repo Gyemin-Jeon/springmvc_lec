@@ -1,4 +1,4 @@
-package com.jeon.app01.pkg01;
+package com.jeon.app01.pkg01_setter;
 
 import lombok.Getter;
 import lombok.Setter;
