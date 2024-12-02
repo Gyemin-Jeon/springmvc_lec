@@ -104,30 +104,5 @@
   <a onclick="fnMove(this)" data-url="https://www.naver.com">네이버</a><br/>
   <a onclick="fnMove(this)" data-url="https://www.kakao.com">카카오</a><br/>
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
