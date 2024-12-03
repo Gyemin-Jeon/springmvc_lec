@@ -5,12 +5,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.jeon</groupId>
-  <artifactId>appp04</artifactId>
-  <name>appp04</name>
+  <artifactId>app05</artifactId>
+  <name>app05</name>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
 
-  <properties>
+   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
 
