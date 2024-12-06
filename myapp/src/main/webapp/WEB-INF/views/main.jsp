@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <a href="${contextPath}/contact/list.do">연락처</a>
+  <a href="${contextPath}/blog/list.do">블로그</a>
 
 </body>
 </html>
