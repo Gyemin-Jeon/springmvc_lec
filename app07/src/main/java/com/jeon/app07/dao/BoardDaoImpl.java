@@ -1,6 +1,7 @@
 package com.jeon.app07.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 // import org.springframework.beans.factory.annotation.Autowired;
@@ -39,8 +40,8 @@ public class BoardDaoImpl implements IBoardDao {
    */
   
   @Override
-  public List<BoardDto> selectBoardList() {
-    List<BoardDto> boardList = template.selectList("mybatis.mappers.boardMapper.selectBoardList");
+  public List<BoardDto> selectBoardList(String sort) {
+    List<BoardDto> boardList = template.selectList("mybatis.mappers.boardMapper.selectBoardList", sort);
     return boardList;
   }
 
@@ -57,6 +58,24 @@ public class BoardDaoImpl implements IBoardDao {
   }
 
   @Override
+  public List<BoardDto> selectBoardSearchList(Map<String, Object> map) {
+    List<BoardDto> searchList = template.selectList("mybatis.mappers.boardMapper.selectBoardSearchList", map);
+    return searchList;
+  }
+  
+  @Override
+  public List<BoardDto> selectBoardPeriodList(Map<String, Object> map) {
+    List<BoardDto> periodList = template.selectList("mybatis.mappers.boardMapper.selectBoardPeriodList", map);
+    return periodList;
+  }
+  
+  @Override
+  public List<BoardDto> selectBoardIntegratedSearch(Map<String, Object> map) {
+    List<BoardDto> list = template.selectList("mybatis.mappers.boardMapper.selectBoardIntegratedSearch", map);
+    return list;
+  }
+  
+  @Override
   public int insertBoard(BoardDto boardDto) {
     int result = template.insert("mybatis.mappers.boardMapper.insertBoard", boardDto);
     return result;
@@ -70,8 +89,14 @@ public class BoardDaoImpl implements IBoardDao {
 
   @Override
   public int deleteBoard(int boardId) {
-    int result = template.delete("mybatis.mappers.boardMapper.deleteBoard", template);
+    int result = template.delete("mybatis.mappers.boardMapper.deleteBoard", boardId);
     return result;
   }
 
+  @Override
+  public int deleteSelectedBoard(int[] numbers) {
+    int result = template.delete("mybatis.mappers.boardMapper.deleteSelectedBoard", numbers);
+    return result;
+  }
+  
 }
