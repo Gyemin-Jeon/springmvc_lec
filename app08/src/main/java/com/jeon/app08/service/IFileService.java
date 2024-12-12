@@ -1,0 +1,12 @@
+package com.jeon.app08.service;
+
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import com.jeon.app08.dto.FileDto;
+
+public interface IFileService {
+  List<FileDto> getFileList();
+  String uploadFile(MultipartHttpServletRequest multipartRequest);
+}
